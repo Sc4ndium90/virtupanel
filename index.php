@@ -11,11 +11,14 @@
 
     <title>VirtuPanel - Home</title>
 </head>
-<body>
+<body class="d-flex">
 
     <!-- Side Navbar -->
-    <?php require $_SERVER['DOCUMENT_ROOT'] . "/components/navbar/navbar.html" ?>
+    <?php require "./components/navbar/navbar.php"; ?>
 
+    <div class="d-flex flex-column flex-shrink-0">
+
+    </div>
 
 </body>
 
@@ -27,8 +30,6 @@
     <script>
         $(document).ready(function() {
             $('a[href="' + this.location.pathname + '"]').addClass('active');
-
-            console.log(this.location.pathname)
         });
     </script>
 
