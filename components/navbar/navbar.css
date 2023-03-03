@@ -1,0 +1,19 @@
+body {
+    min-height: 100vh;
+}
+
+html {
+    min-height: 100vh;
+}
+
+nav {
+    height: 100vh;
+    max-height: 100vh;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.bi {
+    vertical-align: -.125em;
+    fill: currentColor;
+}
