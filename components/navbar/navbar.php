@@ -69,6 +69,33 @@
             <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2.181a.75.75 0 0 1 1.177-.616l4.432 3.068a.75.75 0 0 1 0 1.234l-4.432 3.068A.75.75 0 0 1 12 8.32V6a7 7 0 1 0 7 7 1 1 0 1 1 2 0 9 9 0 1 1-9-9V2.181z" fill="#ffffff"></path>
         </g>
     </symbol>
+    <symbol viewBox="0 0 24 24" fill="none" id="disk">
+        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+        <g id="SVGRepo_iconCarrier">
+            <path d="M6 12C6 9.77915 7.2066 7.84012 9 6.80269M18 11.8027C18 14.0235 16.7934 15.9626 15 17M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12ZM14 12C14 13.1046 13.1046 14 12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10C13.1046 10 14 10.8954 14 12Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </g>
+    </symbol>
+    <symbol>
+        <svg fill="#000000" viewBox="0 0 24 24" id="processor">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+                <path d="M14.25,8H9.75A1.752,1.752,0,0,0,8,9.75v4.5A1.752,1.752,0,0,0,9.75,16h4.5A1.752,1.752,0,0,0,16,14.25V9.75A1.752,1.752,0,0,0,14.25,8ZM14,14H10V10h4Zm8-5a1,1,0,0,0,0-2H20V6.75A2.752,2.752,0,0,0,17.25,4H17V2a1,1,0,0,0-2,0V4H13V2a1,1,0,0,0-2,0V4H9V2A1,1,0,0,0,7,2V4H6.75A2.752,2.752,0,0,0,4,6.75V7H2A1,1,0,0,0,2,9H4v2H2a1,1,0,0,0,0,2H4v2H2a1,1,0,0,0,0,2H4v.25A2.752,2.752,0,0,0,6.75,20H7v2a1,1,0,0,0,2,0V20h2v2a1,1,0,0,0,2,0V20h2v2a1,1,0,0,0,2,0V20h.25A2.752,2.752,0,0,0,20,17.25V17h2a1,1,0,0,0,0-2H20V13h2a1,1,0,0,0,0-2H20V9Zm-4,8.25a.751.751,0,0,1-.75.75H6.75A.751.751,0,0,1,6,17.25V6.75A.751.751,0,0,1,6.75,6h10.5a.751.751,0,0,1,.75.75Z"></path>
+            </g>
+        </svg>
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="ram" fill="#000000">
+        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+        <g id="SVGRepo_iconCarrier"><defs><style>.cls-1{fill:none;stroke:#020202;stroke-miterlimit:10;stroke-width:1.91px;}</style></defs>
+            <path class="cls-1" d="M21.55,11.05a1,1,0,0,0,.95.95v6.68H1.5V12a1,1,0,0,0,0-1.91V5.32h21v4.77A1,1,0,0,0,21.55,11.05Z"></path>
+            <polygon class="cls-1" points="13.91 9.14 10.09 9.14 6.27 9.14 6.27 12.96 10.09 12.96 13.91 12.96 17.73 12.96 17.73 9.14 13.91 9.14"></polygon>
+            <line class="cls-1" x1="4.36" y1="15.82" x2="4.36" y2="18.68"></line><line class="cls-1" x1="8.18" y1="15.82" x2="8.18" y2="18.68"></line>
+            <line class="cls-1" x1="12" y1="15.82" x2="12" y2="18.68"></line><line class="cls-1" x1="15.82" y1="15.82" x2="15.82" y2="18.68"></line>
+            <line class="cls-1" x1="19.64" y1="15.82" x2="19.64" y2="18.68"></line>
+        </g>
+    </symbol>
 </svg>
 
 <nav class="d-flex flex-nowrap">
