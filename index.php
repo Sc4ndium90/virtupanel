@@ -46,7 +46,7 @@
             <div class="col-4">
                 <div class="card">
                     <div class="card-body">
-                        <h4><svg class="bi pe-none me-2" width="25" height="25"><use xlink:href="#processor"></use></svg> RAM</h4>
+                        <h4><svg class="bi pe-none me-2" width="25" height="25"><use xlink:href="#ram"></use></svg> RAM</h4>
                         <ul>
                             <li>% of usage : <?= $mem_percentage ?> %</li>
                             <li>Usage : <?= $mem_gb ?> GB</li>
