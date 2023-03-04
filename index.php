@@ -1,3 +1,13 @@
+<?php
+    $loads = sys_getloadavg();
+    $core_nums = trim(shell_exec("grep -P '^processor' /proc/cpuinfo|wc -l"));
+    $load = round($loads[0]/($core_nums + 1)*100, 1);
+    $exec_free = explode("\n", trim(shell_exec('free')));
+    $get_mem = preg_split("/[\s]+/", $exec_free[1]);
+    $mem_percentage = round($get_mem[2]/$get_mem[1]*100, 0);
+    $mem_gb = number_format(round($get_mem[2]/1024/1024, 2), 2) . '/' . number_format(round($get_mem[1]/1024/1024, 2), 2);
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -16,7 +26,47 @@
     <!-- Side Navbar -->
     <?php require "./components/navbar/navbar.php"; ?>
 
-    <div class="d-flex flex-column flex-shrink-0">
+    <div class="d-flex flex-column container pt-5">
+
+        <h1>Home</h1>
+        <hr>
+
+        <div class="row">
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h4><svg class="bi pe-none me-2" width="25" height="25"><use xlink:href="#processor"></use></svg> Processor</h4>
+                        <ul>
+                            <li>Usage : <?= $load ?> %</li>
+                            <li>Number of cores : <?= $core_nums ?></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h4><svg class="bi pe-none me-2" width="25" height="25"><use xlink:href="#processor"></use></svg> RAM</h4>
+                        <ul>
+                            <li>% of usage : <?= $mem_percentage ?> %</li>
+                            <li>Usage : <?= $mem_gb ?> GB</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h4><svg class="bi pe-none me-2" width="25" height="25"><use xlink:href="#disk"></use></svg> Disk</h4>
+                        <ul>
+                            <li>% of used space : <?= round((disk_total_space("/") - disk_free_space("/")) / disk_total_space("/"), 1) ?>%</li>
+                            <li>Used space : <?= round((disk_total_space("/") - disk_free_space("/")) / 1024**3, 1) ?>/<?= round(disk_total_space("/") / 1024**3, 1) ?> GB</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
 
     </div>
 
