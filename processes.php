@@ -18,8 +18,32 @@
 <body>
 
     <!-- Side Navbar -->
-    <?php require $_SERVER['DOCUMENT_ROOT'] . "/components/navbar/navbar.html" ?>
+    <?php require "./components/navbar/navbar.php" ?>
 
+    <div class="d-flex flex-column container pt-5">
+
+        <h1>Processes</h1>
+        <hr>
+
+        <table id="processesTable" class="table display table-responsive table-striped table-borderless">
+            <thead>
+                <tr>
+                    <th>USER</th>
+                    <th>PID</th>
+                    <th>%CPU</th>
+                    <th>%MEM</th>
+                    <th>VSZ</th>
+                    <th>RSS</th>
+                    <th>TTY</th>
+                    <th>STAT</th>
+                    <th>START</th>
+                    <th>TIME</th>
+                    <th>COMMAND</th>
+                </tr>
+            </thead>
+        </table>
+
+    </div>
 
 </body>
 
