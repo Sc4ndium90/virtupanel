@@ -37,6 +37,7 @@
 
     <!-- Styles -->
     <!-- Bootstrap 5.2 -->    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!-- Local -->            <link href="./styles/style.css" rel="stylesheet">
 
     <title>VirtuPanel - Home</title>
 </head>
@@ -52,8 +53,9 @@
 
         <div class="row">
             <div class="col-4">
-                <div class="card">
-                    <div class="card-body">
+                <!-- Card about processor -->
+                <div class="card specs-card">
+                    <div class="card-body ">
                         <h4><svg class="bi pe-none me-2" width="25" height="25"><use xlink:href="#processor"></use></svg> Processor</h4>
                         <ul>
                             <li>Usage : <?= $load ?> %</li>
@@ -63,7 +65,8 @@
                 </div>
             </div>
             <div class="col-4">
-                <div class="card">
+                <!-- Card about RAM -->
+                <div class="card specs-card">
                     <div class="card-body">
                         <h4><svg class="bi pe-none me-2" width="25" height="25"><use xlink:href="#ram"></use></svg> RAM</h4>
                         <ul>
@@ -73,7 +76,8 @@
                 </div>
             </div>
             <div class="col-4">
-                <div class="card">
+                <!-- Card about storage -->
+                <div class="card specs-card">
                     <div class="card-body">
                         <h4><svg class="bi pe-none me-2" width="25" height="25"><use xlink:href="#disk"></use></svg> Disk</h4>
                         <ul>
