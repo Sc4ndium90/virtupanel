@@ -1,11 +1,30 @@
 <?php
+
+    /*
+     * Get CPU information
+     */
     $loads = sys_getloadavg();
-    $core_nums = trim(shell_exec("grep -P '^processor' /proc/cpuinfo|wc -l"));
+    $core_nums = trim(shell_exec("grep -P '^processor' /proc/cpuinfo|wc -l")); // Retrieve the amount of cores in the VM
     $load = round($loads[0]/($core_nums + 1)*100, 1);
+
+
+    /*
+     * Get RAM information
+     */
     $exec_free = explode("\n", trim(shell_exec('free')));
     $get_mem = preg_split("/[\s]+/", $exec_free[1]);
     $mem_percentage = round($get_mem[2]/$get_mem[1]*100, 0);
     $mem_gb = number_format(round($get_mem[2]/1024/1024, 2), 2) . '/' . number_format(round($get_mem[1]/1024/1024, 2), 2);
+
+
+    /*
+     * Get Storage information
+     */
+
+    $storage_percentage = round((disk_total_space("/") - disk_free_space("/")) / disk_total_space("/") * 100, 1);
+    $storage_usage = round((disk_total_space("/") - disk_free_space("/")) / 1024**3, 1);
+    $storage_max = round(disk_total_space("/") / 1024**3, 1);
+
 ?>
 
 <!doctype html>
@@ -48,8 +67,7 @@
                     <div class="card-body">
                         <h4><svg class="bi pe-none me-2" width="25" height="25"><use xlink:href="#ram"></use></svg> RAM</h4>
                         <ul>
-                            <li>% of usage : <?= $mem_percentage ?> %</li>
-                            <li>Usage : <?= $mem_gb ?> GB</li>
+                            <li>Usage : <?= $mem_gb ?>GB (<?= $mem_percentage ?>%)</li>
                         </ul>
                     </div>
                 </div>
@@ -59,8 +77,7 @@
                     <div class="card-body">
                         <h4><svg class="bi pe-none me-2" width="25" height="25"><use xlink:href="#disk"></use></svg> Disk</h4>
                         <ul>
-                            <li>% of used space : <?= round((disk_total_space("/") - disk_free_space("/")) / disk_total_space("/"), 1) ?>%</li>
-                            <li>Used space : <?= round((disk_total_space("/") - disk_free_space("/")) / 1024**3, 1) ?>/<?= round(disk_total_space("/") / 1024**3, 1) ?> GB</li>
+                            <li>Usage : <?= $storage_usage ?>/<?= $storage_max ?>GB (<?= $storage_percentage ?>%)</li>
                         </ul>
                     </div>
                 </div>
