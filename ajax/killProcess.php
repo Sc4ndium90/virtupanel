@@ -7,7 +7,7 @@ try {
         $id = htmlspecialchars($id);
         if (!is_numeric($id)) { echo "The given PID was NaN"; return; }
 
-        $execString="su virtupanel -c 'sudo kill $id 2>&1'"; //Command to execute
+        $execString = "sudo /usr/bin/kill -s 9 $id 2>&1";
         $output = exec($execString);
 
         echo $output;
