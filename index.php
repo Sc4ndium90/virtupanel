@@ -20,7 +20,6 @@
     /*
      * Get Storage information
      */
-
     $storage_percentage = round((disk_total_space("/") - disk_free_space("/")) / disk_total_space("/") * 100, 1);
     $storage_usage = round((disk_total_space("/") - disk_free_space("/")) / 1024**3, 1);
     $storage_max = round(disk_total_space("/") / 1024**3, 1);
