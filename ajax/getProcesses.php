@@ -14,10 +14,12 @@ try {
             $indices = [10, sizeof($result) - 1];
             $sum = "";
 
+            // Loop to sum all the pieces
             for($i = $indices[0]; $i <= $indices[1]; $i++){
                 $sum .= $result[$i] . " ";
                 unset($results[$index][$i]);
             }
+            // Replace the last value to the right text
             $results[$index][10] = $sum;
         }
     }
