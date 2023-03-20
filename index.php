@@ -54,7 +54,7 @@
             <div class="col-4">
                 <!-- Card about processor -->
                 <div class="card specs-card">
-                    <div class="card-body ">
+                    <div class="card-body">
                         <h4><svg class="bi pe-none me-2" width="25" height="25"><use xlink:href="#processor"></use></svg> Processor</h4>
                         <ul>
                             <li>Usage : <?= $load ?> %</li>
