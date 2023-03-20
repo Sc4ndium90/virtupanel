@@ -15,7 +15,7 @@
 
     <title>VirtuPanel - Processes</title>
 </head>
-<body>
+<body class="d-flex">
 
     <!-- Side Navbar -->
     <?php require "./components/navbar/navbar.php" ?>
