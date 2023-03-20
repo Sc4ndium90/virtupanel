@@ -3,7 +3,6 @@ $(document).ready(function () {
     const location = $('#path').text()
 
     $('#create-dir-btn').click(function (event) {
-        console.log(location)
 
         Swal.fire({
             text: 'Enter the name of the directory you want to create',
