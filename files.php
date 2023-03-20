@@ -53,7 +53,8 @@ if (isset($_GET['path']) && $_GET['path'] !== "//") {
                 </div>
                 <div class="col d-flex justify-content-end">
                     <button class="btn btn-primary me-1" id="create-dir-btn">Create Directory 📁</button>
-                    <button class="btn btn-primary" id="create-file-btn">Create File 📄</button>
+                    <button class="btn btn-primary me-1" id="create-file-btn">Create File 📄</button>
+                    <button class="btn btn-danger me-1" id="delete-file-or-folder-btn">Delete File/Directory 📄📁</button>
                 </div>
             </div>
         </div>
