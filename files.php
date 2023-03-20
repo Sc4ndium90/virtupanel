@@ -58,7 +58,7 @@ if (isset($_GET['path']) && $_GET['path'] !== "//") {
         </div>
 
         <!-- Show the actual path -->
-        <div class="pb-2">Location : <?= $path ?></div>
+        <div class="pb-2">Location : <span id="path"><?= $path ?></span></div>
 
         <!-- Container with files and dirs -->
         <div class="overflow-scroll" style="height: 600px">
