@@ -22,7 +22,7 @@ $(document).ready(function () {
                 if (result.value === '') {
                     let timerInterval
                     Swal.fire({
-                        title: "Process killed", icon: "success",
+                        title: "Directory created", icon: "success",
                         timer: 1500, timerProgressBar: true,
                         didOpen: () => { Swal.showLoading() },
                         willClose: () => { clearInterval(timerInterval) }
