@@ -11,7 +11,7 @@ try {
 
         // If the array contains more than 11 values (commands with options), then join the command options with the command
         if (sizeof($result) > 11) {
-            $indices = [10, sizeof($result)];
+            $indices = [10, sizeof($result) - 1];
             $sum = "";
 
             for($i = $indices[0]; $i <= $indices[1]; $i++){
