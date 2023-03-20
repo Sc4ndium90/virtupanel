@@ -93,16 +93,16 @@ $(document).ready(function () {
     $('#delete-file-or-folder-btn').click(function (event) {
 
         Swal.fire({
-            text: 'Enter the name of the directory you want to create',
+            text: 'Enter the path of the file or the directory you want to delete. ⚠️ Note that, for a folder, it will delete all of its content.',
             input: 'text',
             inputAttributes: {
                 autocapitalize: 'off'
             },
             showCancelButton: false,
-            confirmButtonText: 'Create it!',
+            confirmButtonText: 'Delete it!',
             showLoaderOnConfirm: true,
             preConfirm: (input) => {
-                return $.post('./ajax/createFile.php', { name: input, path: location }).then(function (res) { return res })
+                return $.post('./ajax/deleteFileOrDirectory.php', { path: input }).then(function (res) { return res })
             },
             allowOutsideClick: () => !Swal.isLoading()
         }).then((result) => {
@@ -110,7 +110,7 @@ $(document).ready(function () {
                 if (result.value === '') {
                     let timerInterval
                     Swal.fire({
-                        title: "File created", icon: "success",
+                        title: "File/Directory deleted", icon: "success",
                         timer: 1500, timerProgressBar: true,
                         didOpen: () => { Swal.showLoading() },
                         willClose: () => { clearInterval(timerInterval) }
