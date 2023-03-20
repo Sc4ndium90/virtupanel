@@ -2,6 +2,7 @@
 
 // Default path
 $path = "/";
+$error = null;
 
 // If set in the url (?path=/something), then change the path var
 if (isset($_GET['path']) && $_GET['path'] !== "//") {
