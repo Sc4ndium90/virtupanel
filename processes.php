@@ -54,7 +54,7 @@
     <!-- DataTables -->       <script src="https://cdn.datatables.net/v/bs5/dt-1.13.3/datatables.min.js"></script>
     <!-- SweetAlert -->       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-<script src="js/processes.js"></script>
+    <script src="js/processes.js"></script>
     <script>
         $(document).ready(function() {
             $('a[href="' + this.location.pathname + '"]').addClass('active');
