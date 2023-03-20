@@ -1,5 +1,5 @@
 .specs-card {
-    height: 120px;
+    height: 120px !important;
 }
 
 .document-list {
