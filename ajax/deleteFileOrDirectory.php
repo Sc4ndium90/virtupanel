@@ -3,7 +3,7 @@
 try {
 
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
-        $path = $_POST['path'];
+        $path = $_POST['path']; // Directory or file to delete
 
         if (is_file($path) || is_dir($path)) {
             $execString = "sudo rm -rf " . $path;
