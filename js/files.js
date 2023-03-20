@@ -48,7 +48,7 @@ $(document).ready(function () {
         })
 
     })
-    
+
 
     /*
         Create a new file in the active directory
