@@ -90,8 +90,7 @@ if (isset($_GET['path']) && $_GET['path'] !== "//") {
                                 $scale = 0; $scale_values = ["B", "KB", "MB", "GB", "TB"]; // Set the scale to 0 (0 = B, 1 = KB, etc)
                                 $size = filesize($path.$file); // Retrieve the filesize in bytes
                                 while ($size >= 1000) { // Loop until the file is under 1000, each time adding one to scale and divide size per 1000
-                                    $scale++;
-                                    $size = $size / 1000;
+                                    $scale++; $size = $size / 1000;
                                 }
                                 // Output the final string with filesize rounded to one decimal
                                 echo "<li><span>📄 $file</span><span class='float-end'>".round($size, 1) . $scale_values[$scale] ."</span></li>";
