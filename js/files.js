@@ -46,4 +46,48 @@ $(document).ready(function () {
 
     })
 
+    $('#create-file-btn').click(function (event) {
+
+        Swal.fire({
+            text: 'Enter the name of the directory you want to create',
+            input: 'text',
+            inputAttributes: {
+                autocapitalize: 'off'
+            },
+            showCancelButton: false,
+            confirmButtonText: 'Create it!',
+            showLoaderOnConfirm: true,
+            preConfirm: (input) => {
+                return $.post('./ajax/createFile.php', { name: input, path: location }).then(function (res) { return res })
+            },
+            allowOutsideClick: () => !Swal.isLoading()
+        }).then((result) => {
+            if (result.isConfirmed) {
+                if (result.value === '') {
+                    let timerInterval
+                    Swal.fire({
+                        title: "File created", icon: "success",
+                        timer: 1500, timerProgressBar: true,
+                        didOpen: () => { Swal.showLoading() },
+                        willClose: () => { clearInterval(timerInterval) }
+                    }).then(() => {
+                        window.location.reload();
+                    })
+                } else {
+                    let timerInterval
+                    Swal.fire({
+                        title: "Error", icon: "error",
+                        text: result.value,
+                        timer: 3000, timerProgressBar: true,
+                        didOpen: () => { Swal.showLoading() },
+                        willClose: () => { clearInterval(timerInterval) }
+                    }).then(() => {
+                        window.location.reload();
+                    })
+                }
+            }
+        })
+
+    })
+
 })
