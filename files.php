@@ -42,11 +42,19 @@ if (isset($_GET['path']) && $_GET['path'] !== "//") {
 
         <!-- Form to search a specific folder and go in this folder if possible, else reply the error -->
         <div class="pt-2 pb-2">
-            <form action="files.php" method="GET">
-                <input type="text" name="path" placeholder="Go to path..">
-                <input type="submit" value="Search">
-                <?php if ($error) echo "<span class='text-danger'>$error</span>" ?>
-            </form>
+            <div class="row">
+                <div class="col">
+                    <form action="files.php" method="GET">
+                        <input type="text" name="path" placeholder="Go to path..">
+                        <input type="submit" value="Search">
+                        <?php if ($error) echo "<span class='text-danger'>$error</span>" ?>
+                    </form>
+                </div>
+                <div class="col d-flex justify-content-end">
+                    <button class="btn btn-primary me-1" id="create-dir-btn">Create Directory 📁</button>
+                    <button class="btn btn-primary" id="create-file-btn">Create File 📄</button>
+                </div>
+            </div>
         </div>
 
         <!-- Show the actual path -->
@@ -105,7 +113,9 @@ if (isset($_GET['path']) && $_GET['path'] !== "//") {
     <!-- Bootstrap 5.2 -->    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <!-- Popper -->           <script src="https://unpkg.com/@popperjs/core@2"></script>
     <!-- jQuery -->           <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <!-- SweetAlert -->       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+    <script src="js/files.js"></script>
     <script>
         // Set the active class in the navbar
         $(document).ready(function() {
