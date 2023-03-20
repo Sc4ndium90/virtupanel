@@ -2,7 +2,10 @@ $(document).ready(function () {
 
     const location = $('#path').text()
 
-    $('#create-dir-btn').click(function (event) {
+    /*
+        Create a new directory in the active directory
+     */
+    $('#create-dir-btn').click(function () {
 
         Swal.fire({
             text: 'Enter the name of the directory you want to create',
@@ -13,7 +16,7 @@ $(document).ready(function () {
             showCancelButton: false,
             confirmButtonText: 'Create it!',
             showLoaderOnConfirm: true,
-            preConfirm: (input) => {
+            preConfirm: (input) => { // Send data
                 return $.post('./ajax/createDirectory.php', { name: input, path: location }).then(function (res) { return res })
             },
             allowOutsideClick: () => !Swal.isLoading()
@@ -27,7 +30,7 @@ $(document).ready(function () {
                         didOpen: () => { Swal.showLoading() },
                         willClose: () => { clearInterval(timerInterval) }
                     }).then(() => {
-                        window.location.reload();
+                        window.location.reload(); // Refresh the page
                     })
                 } else {
                     let timerInterval
@@ -38,15 +41,19 @@ $(document).ready(function () {
                         didOpen: () => { Swal.showLoading() },
                         willClose: () => { clearInterval(timerInterval) }
                     }).then(() => {
-                        window.location.reload();
+                        window.location.reload(); // Refresh the page
                     })
                 }
             }
         })
 
     })
+    
 
-    $('#create-file-btn').click(function (event) {
+    /*
+        Create a new file in the active directory
+     */
+    $('#create-file-btn').click(function () {
 
         Swal.fire({
             text: 'Enter the name of the file you want to create',
@@ -57,7 +64,7 @@ $(document).ready(function () {
             showCancelButton: false,
             confirmButtonText: 'Create it!',
             showLoaderOnConfirm: true,
-            preConfirm: (input) => {
+            preConfirm: (input) => { // Send the data
                 return $.post('./ajax/createFile.php', { name: input, path: location }).then(function (res) { return res })
             },
             allowOutsideClick: () => !Swal.isLoading()
@@ -71,7 +78,7 @@ $(document).ready(function () {
                         didOpen: () => { Swal.showLoading() },
                         willClose: () => { clearInterval(timerInterval) }
                     }).then(() => {
-                        window.location.reload();
+                        window.location.reload(); // Refresh the page
                     })
                 } else {
                     let timerInterval
@@ -82,7 +89,7 @@ $(document).ready(function () {
                         didOpen: () => { Swal.showLoading() },
                         willClose: () => { clearInterval(timerInterval) }
                     }).then(() => {
-                        window.location.reload();
+                        window.location.reload(); // Refresh the page
                     })
                 }
             }
@@ -90,7 +97,11 @@ $(document).ready(function () {
 
     })
 
-    $('#delete-file-or-folder-btn').click(function (event) {
+
+    /*
+        Delete a file or a whole directory specified
+     */
+    $('#delete-file-or-folder-btn').click(function () {
 
         Swal.fire({
             text: 'Enter the path of the file or the directory you want to delete. ⚠️ Note that, for a folder, it will delete all of its content.',
@@ -101,7 +112,7 @@ $(document).ready(function () {
             showCancelButton: false,
             confirmButtonText: 'Delete it!',
             showLoaderOnConfirm: true,
-            preConfirm: (input) => {
+            preConfirm: (input) => { // Send the data
                 return $.post('./ajax/deleteFileOrDirectory.php', { path: input }).then(function (res) { return res })
             },
             allowOutsideClick: () => !Swal.isLoading()
@@ -115,7 +126,7 @@ $(document).ready(function () {
                         didOpen: () => { Swal.showLoading() },
                         willClose: () => { clearInterval(timerInterval) }
                     }).then(() => {
-                        window.location.reload();
+                        window.location.reload(); // Refresh the page
                     })
                 } else {
                     let timerInterval
@@ -126,7 +137,7 @@ $(document).ready(function () {
                         didOpen: () => { Swal.showLoading() },
                         willClose: () => { clearInterval(timerInterval) }
                     }).then(() => {
-                        window.location.reload();
+                        window.location.reload(); // Refresh the page
                     })
                 }
             }
