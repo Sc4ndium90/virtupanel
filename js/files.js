@@ -27,7 +27,7 @@ $(document).ready(function () {
                         didOpen: () => { Swal.showLoading() },
                         willClose: () => { clearInterval(timerInterval) }
                     }).then(() => {
-                        // Action after success (prob reload page)
+                        window.location.reload();
                     })
                 } else {
                     let timerInterval
@@ -38,7 +38,7 @@ $(document).ready(function () {
                         didOpen: () => { Swal.showLoading() },
                         willClose: () => { clearInterval(timerInterval) }
                     }).then(() => {
-                        // Action after error
+                        window.location.reload();
                     })
                 }
             }
