@@ -4,10 +4,10 @@ try {
 
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $id = $_POST['id'];
-        $id = htmlspecialchars($id);
-        if (!is_numeric($id)) { echo "The given PID was NaN"; return; }
+        $id = htmlspecialchars($id); // Escape special chars
+        if (!is_numeric($id)) { echo "The given PID was NaN"; return; } // If not a number then return
 
-        $execString = "sudo /usr/bin/kill -s 9 $id 2>&1";
+        $execString = "sudo /usr/bin/kill -s 9 $id 2>&1"; // Kill the process
         $output = exec($execString);
 
         echo $output;
