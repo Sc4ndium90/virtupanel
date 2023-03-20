@@ -24,6 +24,17 @@
     $storage_usage = round((disk_total_space("/") - disk_free_space("/")) / 1024**3, 1);
     $storage_max = round(disk_total_space("/") / 1024**3, 1);
 
+
+    /*
+     * Get VM Uptime
+     */
+    $uptime   = @file_get_contents('/proc/uptime');
+    $num   = floatval($uptime);
+    $secs  = fmod($num, 60);  $num = (int)($num / 60);
+    $mins  = $num % 60;             $num = (int)($num / 60);
+    $hours = $num % 24;             $num = (int)($num / 24);
+    $days  = $num;
+
 ?>
 
 <!doctype html>
@@ -51,7 +62,7 @@
         <hr>
 
         <div class="row">
-            <div class="col-4">
+            <div class="col-3">
                 <!-- Card about processor -->
                 <div class="card specs-card">
                     <div class="card-body">
@@ -63,7 +74,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col-3">
                 <!-- Card about RAM -->
                 <div class="card specs-card">
                     <div class="card-body">
@@ -74,13 +85,24 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col-3">
                 <!-- Card about storage -->
                 <div class="card specs-card">
                     <div class="card-body">
                         <h4><svg class="bi pe-none me-2" width="25" height="25"><use xlink:href="#disk"></use></svg> Disk</h4>
                         <ul>
                             <li>Usage : <?= $storage_usage ?>/<?= $storage_max ?>GB (<?= $storage_percentage ?>%)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <!-- Card about uptime -->
+                <div class="card specs-card">
+                    <div class="card-body">
+                        <h4><svg class="bi pe-none me-2" width="25" height="25"><use xlink:href="#calendar3"></use></svg> Uptime</h4>
+                        <ul>
+                            <li><?= $days ?> days, <?= $hours ?>h, <?= $mins ?>min and <?= round($secs, 0) ?>sec</li>
                         </ul>
                     </div>
                 </div>
