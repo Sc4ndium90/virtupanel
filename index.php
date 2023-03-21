@@ -120,6 +120,7 @@
     <!-- jQuery -->           <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
 
     <script>
+        // Set the active class in the navbar
         $(document).ready(function() {
             $('a[href="' + this.location.pathname + '"]').addClass('active');
         });

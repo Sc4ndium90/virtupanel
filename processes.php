@@ -56,6 +56,7 @@
 
     <script src="js/processes.js"></script>
     <script>
+        // Set the active class in the navbar
         $(document).ready(function() {
             $('a[href="' + this.location.pathname + '"]').addClass('active');
         });
